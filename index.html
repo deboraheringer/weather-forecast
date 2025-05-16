@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Previsão do Tempo</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="search">
+        <form id="search-form" class="search-field">
+          <button class="on-search-submit" aria-label="Buscar cidade">
+            <img src="./src/assets/search.png" alt="Search" class="search-icon" />
+          </button>
+          <input id="search-input" type="text" placeholder="Digite o nome da cidade..." required />
+        </form>
+      </section>
+
+      <section class="current-weather">
+        <div class="location-info">
+          <h1 id="city-name"></h1>
+          <div class="current-temperature">
+            <div>
+              <strong><p class="temperature" id="temperature"></p></strong>
+              <p class="condition" id="condition"></p>
+              <div class="max-min-temp">
+                <div class="max-temp">
+                  <div>Máx:ㅤ</div>
+                  <div id="max-temp">-</div>
+                </div>
+                <div class="min-temp">
+                  <div>Min:ㅤ</div>
+                  <div id="min-temp">-</div>
+                </div>
+              </div>
+            </div>
+            <img
+              id="condition-icon"
+              src="https://cdn.weatherapi.com/weather/64x64/day/116.png"
+              alt="ícone condição do clima"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="weather-details">
+        <div class="humidity">
+          <img src="./src/assets/icons8-wet-24 (1).png" />
+          <div class="title-details">Umidade</div>
+          <div id="humidity">--</div>
+        </div>
+        <div class="wind-speed">
+          <img src="./src/assets/icons8-wind-24.png" />
+          <div class="title-details">Vento</div>
+          <div id="wind-speed">--</div>
+        </div>
+        <div class="uv-index">
+          <img src="./src/assets/icons8-sun-24.png" />
+          <div class="title-details">Índice UV</div>
+          <div id="uv-index">--</div>
+        </div>
+        <div class="rain-chance">
+          <img src="./src/assets/icons8-hygrometer-24.png" />
+          <div class="title-details">Chuva</div>
+          <div id="rain-chance">--</div>
+        </div>
+      </section>
+
+      <section class="sun-moon-times">
+        <div class="sun-times">
+          <div class="sunrise">
+            <div class="sun-img"><img src="./src/assets/icons8-sunrise-32.png" /></div>
+            <div class="sun">
+              <div id="sunrise-time">--</div>
+              <div class="title-sun-moon">Nascer do sol</div>
+            </div>
+          </div>
+          <div class="sunset">
+            <div class="sun-img"><img src="./src/assets/icons8-sunset-32.png" /></div>
+            <div class="sun">
+              <div id="sunset-time">--</div>
+              <div class="title-sun-moon">Pôr do sol</div>
+            </div>
+          </div>
+        </div>
+        <div class="moon-times">
+          <div class="moon">
+            <div class="title-sun-moon">Nascer da Lua</div>
+            <div id="moonrise-time">--</div>
+          </div>
+          <img src="./src/assets/icons8-full-moon-32.png" />
+          <div class="moon">
+            <div class="title-sun-moon">Pôr da lua</div>
+            <div id="moonset-time">--</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hourly-wrapper">
+        <button class="scroll-btn left" onclick="scrollHourlyLeft()">&#10094;</button>
+
+        <div class="hourly-forecast" id="hourlyForecast"></div>
+
+        <button class="scroll-btn right" onclick="scrollHourlyRight()">&#10095;</button>
+      </section>
+    </main>
+    <script src="./src/js/script.js"></script>
+  </body>
+</html>
