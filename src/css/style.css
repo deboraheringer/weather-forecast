@@ -1,0 +1,274 @@
+body {
+  font-family: 'Red Hat Display', sans-serif;
+  background-color: #e0f2f1;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 360px;
+  background: linear-gradient(to bottom, #b3d8f7, #eaf6fd);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.search-field {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 6px 10px;
+}
+
+.search-field input {
+  flex: 1;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: #4e4e4e;
+  background: transparent;
+}
+
+.search-field input:-webkit-autofill {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+  -webkit-text-fill-color: #4e4e4e;
+}
+
+.on-search-submit {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 30px;
+  padding: 2px;
+  opacity: 0.7;
+}
+
+.location-info {
+  margin-top: 20px;
+  padding: 0 40px;
+}
+
+.location-info h1 {
+  font-size: 24px;
+  position: absolute;
+}
+
+.current-temperature {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 34px;
+}
+
+.location-info img {
+  width: 50%;
+  height: 50%;
+}
+
+.temperature {
+  font-size: 64px;
+  margin: 5px 0;
+}
+
+.condition {
+  font-size: 20px;
+}
+
+.max-min-temp {
+  display: flex;
+  margin-top: 5px;
+  font-size: 16px;
+  color: #4e4e4e;
+}
+
+.max-temp,
+.min-temp {
+  display: flex;
+}
+
+.min-temp {
+  margin-left: 15px;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.weather-details > div {
+  display: grid;
+  place-items: center;
+  padding: 10px 5px;
+  min-width: 76px;
+  background: #ffffffcc;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  flex-shrink: 0;
+}
+
+.weather-details img {
+  margin-bottom: 6px;
+}
+
+.title-details {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.weather-details #humidity,
+.weather-details #wind-speed,
+.weather-details #uv-index,
+.weather-details #rain-chance {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.sun-moon-times {
+  display: grid;
+  padding: 0 15px;
+}
+
+.sun-times,
+.moon-times {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.sunrise,
+.sunset {
+  display: flex;
+  justify-content: space-between;
+  min-width: 160px;
+  margin-top: 10px;
+  padding: 15px 10px;
+  background: #ffffffcc;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sun,
+.moon {
+  min-width: 100px;
+  padding-top: 3px;
+}
+
+.title-sun-moon {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.sun-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 42px;
+}
+
+.moon-times img {
+  height: 42px;
+}
+
+.sun-moon-times #sunrise-time,
+.sun-moon-times #sunset-time,
+.sun-moon-times #moonset-time,
+.sun-moon-times #moonrise-time {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.moon-times {
+  margin-top: 15px;
+  padding: 20px;
+  background: #ffffffcc;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.hourly-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.hourly-forecast {
+  min-width: 100%;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 16px;
+  padding: 20px 0;
+  scrollbar-width: none;
+}
+
+.hourly-forecast::-webkit-scrollbar {
+  display: none;
+}
+
+.forecast-item {
+  min-width: 70px;
+  background-color: #ffffffcc;
+  border-radius: 20px;
+  padding: 12px 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.forecast-item .time {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.forecast-item .icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 6px;
+}
+
+.forecast-item .temp {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #ffffffcc;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 2;
+}
+
+.scroll-btn.left {
+  left: 0;
+}
+
+.scroll-btn.right {
+  right: 0;
+}
